@@ -24,7 +24,7 @@ app.use("/users", Users);
 app.use("/allideas", require("./routes/idea"));
 
 //must change your port to this for deployment else it wont work
-const PORT = process.env.PORT;
+const PORT = ( process.env.PORT || 5000 );
 
 //serves all our static files from the build directory.
 app.use(express.static(path.join(__dirname, "build")));
@@ -36,6 +36,8 @@ app.get("/*", (req, res) => {
 });
 
 app.listen(PORT);
+
+
 
 // app.listen(port, () => {
 //   console.log(`running on ${port}`);
