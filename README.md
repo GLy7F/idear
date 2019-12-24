@@ -1,7 +1,7 @@
 # Idear
 ![GitHub Logo](https://6.top4top.net/p_1448t9bxn1.gif)
 
-Site Live :  (https://idearr.heroku.com)
+Site Live :  (https://idearr.herokuapp.com/)
 
 ---
 ## Description
