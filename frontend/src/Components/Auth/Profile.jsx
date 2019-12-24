@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import { URL, logout } from '../../helper' 
+import {  logout } from '../../helper' 
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 
@@ -22,7 +22,7 @@ export default class Profile extends Component {
 
     passwordChange = (password) =>{
         //make axios call here
-        axios.put(`${URL}/users/profile/password`, { password }, { 
+        axios.put(`/users/profile/password`, { password }, { 
             "headers": {
                 "Authorization" :localStorage.getItem('usertoken')
             }
@@ -42,7 +42,7 @@ export default class Profile extends Component {
 
     componentDidMount(){
 
-        axios.get(`${URL}/users/profile/`, { 
+        axios.get(`/users/profile/`, { 
             "headers": {
                 "Authorization" :localStorage.getItem('usertoken')
             }

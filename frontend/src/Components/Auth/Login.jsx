@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Container } from 'react-bootstrap'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { URL } from '../../helper'
+// import { URL } from '../../helper'
 import axios from 'axios'
 
 const loginSchema = Yup.object().shape({
@@ -17,7 +17,7 @@ export default class Login extends Component {
 
 
   submitHandle = (val)=>{
-        axios.post(`${URL}/users/login`, val)
+        axios.post(`/users/login`, val)
         .then(resp => {
           console.log(resp)
           if(resp.status === 200){

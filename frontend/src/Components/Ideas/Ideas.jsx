@@ -10,7 +10,7 @@ export default class Ideas extends Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:5000/allideas/ideas")
+    fetch("/allideas/ideas")
       .then(res => res.json())
       .then(res =>
         this.setState({

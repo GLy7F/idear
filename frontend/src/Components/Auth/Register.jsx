@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Container } from 'react-bootstrap'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { URL } from '../../helper'
+// import { URL } from '../../helper'
 import axios from 'axios'
 
 const registerSchema = Yup.object().shape({
@@ -21,7 +21,7 @@ export default class Register extends Component {
 
   register = newUser => {
     return axios
-      .post(`${URL}/users/register`, newUser)
+      .post(`/users/register`, newUser)
       .then(res =>{ 
         console.log(res)
         this.props.history.push("/login");

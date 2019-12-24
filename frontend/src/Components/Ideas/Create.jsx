@@ -3,7 +3,7 @@ import { Container } from 'react-bootstrap'
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
-import { URL, decode} from '../../helper'
+import {   decode} from '../../helper'
 
 const ideaSchema = Yup.object().shape({
     title: Yup.string()
@@ -32,7 +32,7 @@ export default class Create extends Component {
         val.user = decode() 
 
     
-        axios.post(`${URL}/allideas/new/${val.user}`, val)
+        axios.post(`/allideas/new/${val.user}`, val)
         .then(data => {
             console.log(data)
             if(data.status === 200){

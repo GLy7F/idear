@@ -3,7 +3,7 @@ const cors = require("cors");
 var bodyParser = require("body-parser");
 var app = express();
 const mongoose = require("mongoose");
-var port = process.env.PORT || 5000;
+// var port = process.env.PORT || 5000;
 require("dotenv/config");
 
 app.use(cors())
@@ -23,6 +23,20 @@ const Users = require("./routes/Users");
 app.use("/users", Users);
 app.use("/allideas", require("./routes/idea"));
 
-app.listen(port, () => {
-  console.log(`running on ${port}`);
+//must change your port to this for deployment else it wont work
+const PORT = process.env.PORT;
+
+//serves all our static files from the build directory.
+app.use(express.static(path.join(__dirname, "build")));
+
+// After all routes
+// This code essentially serves the index.html file on any unknown routes.
+app.get("/*", (req, res) => {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
+
+app.listen(PORT);
+
+// app.listen(port, () => {
+//   console.log(`running on ${port}`);
+// });

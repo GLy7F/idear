@@ -1,6 +1,6 @@
 import jwtDecode from 'jwt-decode';
 
-export const URL = "http://localhost:5000";
+// export const URL = "http://localhost:5000";
 
 export function decode (){
 
@@ -11,5 +11,5 @@ export function decode (){
 
 export const logout = (user)=>{
     localStorage.removeItem('usertoken') // localStorage in the browser
-    window.location.replace("http://localhost:3000/");
+    window.location.replace("/");
 }
